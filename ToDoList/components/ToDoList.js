@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, Button, StyleSheet } from 'react-native';
+import 'react-native-get-random-values'
 import { v4 as uuidv4 } from 'uuid';
 import AddTask from './AddTask';
 
@@ -20,7 +21,7 @@ const ToDoList = ({ toDos }) => {
     <View style={styles.todoListContainer}>
       {toDoList.map((toDo) => (
         <View key={toDo.id}>
-          <Text style={styles.todoItem}>task: {toDo.title}</Text>
+          <Text style={styles.todoItem}>{toDo.title}</Text>
           <Button title="Remove" onPress={() => removeToDo(toDo.id)} />
         </View>
       ))}
